@@ -2,7 +2,7 @@
 
 ## Interviewer Prompt
 
-Given an string `str`, create a function that returns a boolean, corresponding to whether that string is a palindrome (spelled the same backwards and forwards). Our palindrome check should be case-insensitive.
+Given a string `str`, create a function that returns a boolean which corresponds to whether that string is a palindrome (a word that is spelled the same backwards and forwards). Our palindrome check should be case-insensitive.
 
 ## Examples
 
@@ -17,7 +17,7 @@ isPal('!? 100 ABCcba 001 ?!') => true
 
 ### Approach
 
-Implement a `while` loop that continues running if the string has a length >1. Slice off the first and last chars of the string and ensure they match. If they do not, break out of the loop and return false. If we are able to whittle the string down to 0 or 1 characters, return true
+Implement a `while` loop that continues running if the string has a length > 1. Slice off the first and last chars of the string and ensure they match. If they do not, break out of the loop and return false. If we are able to whittle the string down to 0 or 1 characters, return true.
 
 ### Code
 
@@ -37,17 +37,17 @@ function isPalIterative(str) {
 
 ### Time Complexity: **O(n)**
 
-- We must loop through the string n/2 times in order to return false.
+- The amount of times we loop through the string grows directly with our input size.
 
 ### Space Complexity: **O(1)**
 
-- We create a constant number of new variables (first and last) to solve the problem
+- We create a constant number of new variables (first and last) to solve the problem.
 
 ## Recursive Solution
 
 ### Approach
 
-Check the length of the string. If it is <= 1 characters, return true. If not, check if the first and last characters of the string match. If they do not, return false. If they match, slice them off the string and recurse.
+Check the length of the string. If it is <= 1 characters, return true. If not, check if the first and last characters of the string match. If they do not, return false. If they match, slice them off the string and call the function recursively.
 
 ### Code
 
@@ -68,8 +68,8 @@ function isPalRecursive(str) {
 
 ### Time Complexity: **O(n)**
 
-- We must recurse through the string n/2 times in order to return false.
+- The amount of times we loop through the string grows directly with our input size.
 
 ### Space Complexity: **O(n)**
 
-- We create n/2 additional calls on the recursive call stack, each time we slice of the first/last characters and recurse.
+- We create additional calls on the call stack each time we slice off the first/last characters and call the function recursively.
