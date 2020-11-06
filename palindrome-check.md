@@ -27,7 +27,7 @@ function isPalIterative(str) {
     let first = str[0].toLowerCase();
     let last = str[str.length - 1].toLowerCase();
     if (first != last) return false;
-    str = str.slice(1, str.length - 2);
+    str = str.slice(1, str.length - 1);
   }
   return true;
 }
@@ -55,11 +55,11 @@ Check the length of the string. If it is <= 1 characters, return true. If not, c
 function isPalRecursive(str) {
   if (str.length <= 1) {
     return true;
-  } else if (str[0] !== str[str.length - 1]) {
+  } else if (str[0].toLowerCase() !== str[str.length - 1].toLowerCase()) {
     return false;
   } else {
     str = str.slice(1, str.length - 1);
-    return isPalRecursive(str);
+    return isPal(str);
   }
 }
 ```
