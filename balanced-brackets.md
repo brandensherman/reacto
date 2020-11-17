@@ -22,9 +22,11 @@ In general an optimal approach is to keep a _stack_ of open brackets, pushing as
 A stack stores items in a last-in, first-out (LIFO) order.
 
 ```js
-const bracketPattern = /[[\](){}]/g; // regex expression that will match all brackets we look for
+// regex expression that will match all brackets we look for
+const bracketPattern = /[[\](){}]/g;
+
+// keep track of the bracket pairings
 const bracketPairs = {
-  // keep track of the bracket pairings
   '[': ']',
   '(': ')',
   '{': '}',
@@ -43,7 +45,7 @@ function hasBalancedBrackets(inputString) {
 
     // check the current bracket against the last bracket to see if they are a pair
     if (bracketPairs[lastBracket] === bracket) {
-      brackets.pop(); // if true - remove the opening bracket from the array and move on
+      brackets.pop(); // if true - remove the last bracket from the array and move on
     } else {
       brackets.push(bracket); // if false - push the new bracket on to the array
     }
@@ -53,12 +55,11 @@ function hasBalancedBrackets(inputString) {
 }
 ```
 
-Time Complexity: O(N)
-Space Complexity: O(N)
-
 # Regex Explanation
 
-/[[\](){}]/g
+```js
+/[[\](){}]/g;
+```
 
 / /g ---> global - return all matches instead of just the first that is found
 
@@ -105,6 +106,7 @@ function hasBalancedBrackets(str) {
     } else if (closes.hasOwnProperty(char)) {
       // pop off the most recent item on the opensStack
       const mostRecentOpen = opensStack.pop();
+
       // save the corresponding closing bracket for the popped off item
       const correspondingClose = opens[mostRecentOpen];
 
@@ -118,9 +120,6 @@ function hasBalancedBrackets(str) {
   return opensStack.length === 0;
 }
 ```
-
-Time Complexity: O(N)
-Space Complexity: O(N)
 
 # Solution 3
 
@@ -157,6 +156,3 @@ const hasBalancedBrackets = (str) => {
   return !bracketStack.length;
 };
 ```
-
-Time Complexity: O(N)
-Space Complexity: O(N)
