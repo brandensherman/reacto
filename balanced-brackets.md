@@ -15,7 +15,7 @@ hasBalancedBrackets('({[]})'); // true
 hasBalancedBrackets('text ( is allowed ){rwwrwrrww [] ()}'); // true
 ```
 
-# Solutions
+# Solution 1
 
 In general an optimal approach is to keep a _stack_ of open brackets, pushing as we come across them. As we come across closing brackets, if they match the most-recently-opened bracket we can pop the most-recently-opened bracket. If our stack is empty once we reach the end of the string, then our brackets must have been balanced.
 
@@ -62,7 +62,9 @@ function hasBalancedBrackets(inputString) {
 
 {} ---> match the characters '{' and '}'
 
-A more optimal solution would cut out early if it comes across a closing bracket that does not match the most recent open bracket. That could look something like:
+# Solution 2
+
+A more optimal solution would be to break out of the loop early if it comes across a closing bracket that does not match the most recent open bracket. That could look something like:
 
 ```js
 const opens = {};
