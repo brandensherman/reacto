@@ -48,6 +48,20 @@ function hasBalancedBrackets(inputString) {
 }
 ```
 
+# Regex Explanation
+
+/[[\](){}]/g
+
+/ /g ---> global - return all matches instead of just the first that is found
+
+[ ] ---> (surrounding brackets) - match for all characters in the list below
+
+[\] ---> match the characters '[' and ']'
+
+() ---> match the characters '(' and ')'
+
+{} ---> match the characters '{' and '}'
+
 A more optimal solution would cut out early if it comes across a closing bracket that does not match the most recent open bracket. That could look something like:
 
 ```js
