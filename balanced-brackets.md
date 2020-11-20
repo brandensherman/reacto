@@ -123,8 +123,7 @@ function hasBalancedBrackets(str) {
 
 # Solution 3
 
-Here is another similar solution that uses the regex expression from earlier as well as a Queue.
-A queue stores items in a first-in, first-out (FIFO) order.
+Here is another similar solution that uses the regex expression from earlier.
 
 ```js
 // regex expression that will match all brackets we look for
